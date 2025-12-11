@@ -1,10 +1,12 @@
 import pathlib
 
 HERE = pathlib.Path(__file__).parent
+print(HERE)
 IK_CONFIG_ROOT = HERE / "ik_configs"
 ASSET_ROOT = HERE / ".." / "assets"
 
 ROBOT_XML_DICT = {
+    "arcus_a1": ASSET_ROOT / "a1" / "scene_Arcus_23dof.xml",
     "unitree_g1": ASSET_ROOT / "unitree_g1" / "g1_mocap_29dof.xml",
     "unitree_g1_with_hands": ASSET_ROOT / "unitree_g1" / "g1_mocap_29dof_with_hands.xml",
     "unitree_h1": ASSET_ROOT / "unitree_h1" / "h1.xml",
@@ -45,6 +47,7 @@ IK_CONFIG_DICT = {
         "tienkung": IK_CONFIG_ROOT / "smplx_to_tienkung.json",
     },
     "bvh_lafan1":{
+        "arcus_a1": IK_CONFIG_ROOT / "bvh_lafan1_to_a1.json",
         "unitree_g1": IK_CONFIG_ROOT / "bvh_lafan1_to_g1.json",
         "unitree_g1_with_hands": IK_CONFIG_ROOT / "bvh_lafan1_to_g1.json",
         "booster_t1_29dof": IK_CONFIG_ROOT / "bvh_lafan1_to_t1_29dof.json",
@@ -71,6 +74,7 @@ IK_CONFIG_DICT = {
 
 
 ROBOT_BASE_DICT = {
+    "arcus_a1": "pelvis",
     "unitree_g1": "pelvis",
     "unitree_g1_with_hands": "pelvis",
     "unitree_h1": "pelvis",
@@ -91,6 +95,7 @@ ROBOT_BASE_DICT = {
 }
 
 VIEWER_CAM_DISTANCE_DICT = {
+    "arcus_a1": 2.0,
     "unitree_g1": 2.0,
     "unitree_g1_with_hands": 2.0,
     "unitree_h1": 3.0,
