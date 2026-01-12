@@ -37,7 +37,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--robot",
         choices=['arcus_a1', "unitree_g1", "unitree_g1_with_hands"],
-        default="unitree_g1",
+        default="arcus_a1",
     )
     
     

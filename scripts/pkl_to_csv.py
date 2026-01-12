@@ -19,6 +19,12 @@ print(args_cli.input_file)
 
 with open(args_cli.input_file, 'rb') as f:
     df = pickle.load(f)
+
+pos = np.zeros((df['dof_pos'].shape[0], df['dof_pos'].shape[1]+6))
+
+pos[:,:12] = df['dof_pos'][:,:12]
+pos[:,14:19] = df['dof_pos'][:,12:17]
+pos[:,21:26] = df['dof_pos'][:,17:22]
 # vel = torch.gradient(torch.tensor(df['root_pos']), spacing=1/df['fps'], dim=0)[0].numpy()
 out = np.concat([df['root_pos'], df['root_rot'],   df['dof_pos']], axis=1)
 np.savetxt(args_cli.output_name, out, delimiter=',')
